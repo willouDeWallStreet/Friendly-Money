@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- CSS perso -->
   <link rel="stylesheet" type="text/css" href="css/styleHome.css">
+  <link rel="stylesheet" type="text/css" href="css/styleAdd.css">
   <!-- JS perso -->
-  <script src="js/scriptHome.js"></script>
+  <script src="js/scriptAdd.js"></script>
   <!-- FRAMEWORK BOOTSTRAP 4 -->
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -47,17 +48,31 @@
 
   
 <div class="container">
-    <form class="form-inline" action="/action_page.php">
-        <label for="groupName">Group name: </label>
-        <input type="text" class="form-control form-control-success" id="groupName">
-        <label for="numberOfPeople">Number of people: </label>
-        <input type="number" class="form-control" id="numberOfPeople">
-
-        <label for="username">Username: </label>
-        <input type="text" class="form-control" id="username">
-
-        <button type="submit" class="btn btn-primary">Submit</button>
+  <h1 class="text-center" style="margin-top: 4%;">New Adventure</h1>
+  <div class="formBox form-group">
+    <form action="/action_page.php">
+      <div class="form-group row">
+        <div class="col-sm-1"></div>
+        <label for="groupName" class="col-sm-2 col-form-label">Group name: </label>
+        <input type="text" class="form-control col-sm-6" id="groupName" style="margin-bottom: 1.5%;">
+        <div class="col-sm-3"></div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-1"></div>
+        <label for="numberOfPeople" class="col-sm-2 col-form-label">Number of people: </label>
+        <input type="number" class="form-control col-sm-6" id="numberOfPeople" style="margin-bottom: 1.5%;" onchange="nbOfPeopleFunction()">
+        <div class="col-sm-3"></div>
+      </div>
+      <div class="form-group row" id="usernamesInputsFields">
+        
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-5"></div>
+        <button type="submit" class="btn btn-primary col-sm-2">Submit</button>
+        <div class="col-sm-5"></div>
+      </div>
     </form>
+  </div>
 </div><br><br>
 
 <footer class="container-fluid text-center">

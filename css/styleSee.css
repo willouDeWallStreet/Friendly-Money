@@ -1,0 +1,15 @@
+.currentTable{
+    background-color: rgb(30, 30, 31);
+    color: ghostwhite;
+}
+.noCenter{
+    text-align: left;
+}
+.tableRowNegative:hover{
+    background-color: rgb(247, 141, 137);
+    font-weight: bold;
+}
+.tableRowPositive:hover{
+    background-color: rgb(127, 207, 127);
+    font-weight: bold;
+}

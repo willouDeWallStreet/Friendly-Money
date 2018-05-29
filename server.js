@@ -15,7 +15,9 @@ app.get('/create',function(req,res,next){
 app.get('/see',function(req,res,next){
     res.sendfile('see.html');
 });
-
+app.get('/account',function(req,res,next){
+    res.sendfile('account.html');
+});
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
@@ -30,6 +32,9 @@ var con = mysql.createConnection({
   password: ""
 });
 con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
+    if(!err) {
+        console.log("Database is connected ... \n\n");  
+    } else {
+        console.log("Error connecting database ... \n\n");  
+    }
 });

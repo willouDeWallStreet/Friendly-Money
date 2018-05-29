@@ -1,5 +1,26 @@
-var http = require('http');
-var mysql = require('mysql');
+const express = require('express');
+const mysql = require('mysql');
+const app = express();
+
+// MAPPING
+app.get('/home',function(req,res,next){
+    res.sendfile('home.html');
+});
+app.get('/menu',function(req,res,next){
+    res.sendfile('menu.html');
+});
+app.get('/create',function(req,res,next){
+    res.sendfile('create.html');
+});
+app.get('/see',function(req,res,next){
+    res.sendfile('see.html');
+});
+
+
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!');
+});
+
 
 var con = mysql.createConnection({
   host: "localhost",
@@ -8,13 +29,7 @@ var con = mysql.createConnection({
   user: "root",
   password: ""
 });
-
 con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
 });
-
-http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.end('Hello World!');
-}).listen(8080);

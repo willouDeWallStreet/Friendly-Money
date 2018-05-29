@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Add</title>
+  <title>Create</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- CSS perso -->
   <link rel="stylesheet" type="text/css" href="css/styleHome.css">
-  <link rel="stylesheet" type="text/css" href="css/styleAdd.css">
+  <link rel="stylesheet" type="text/css" href="css/styleCreate.css">
   <!-- JS perso -->
-  <script src="js/scriptAdd.js"></script>
+  <script src="js/scriptCreate.js"></script>
   <!-- FRAMEWORK BOOTSTRAP 4 -->
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -22,7 +22,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
 <body>
-
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="home.html">Logo</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
@@ -41,43 +40,37 @@
             <a class="nav-link" href="javascript:void(0)">Contact</a>
         </li>
       </ul>
-      <a class="btn btn-outline-success my-2 my-sm-0" href="%">William EVRARD</a>
+      <a class="btn btn-outline-success my-2 my-sm-0" href="account.html">William EVRARD</a>
     </div>
   </nav>
 
+  <div class="container">
+    <h1 class="text-center" style="margin-top: 4%;">New Adventure</h1>
+    <div class="form-group" style="margin-top: 6%; margin-bottom: 7%;">
+      <form action="/action_page.php">
+        <div class="form-group row">
+          <div class="col-sm-3"></div>
+          <input type="text" placeholder="(Group name)" class="form-control col-sm-6" id="groupName" style="margin-bottom: 1.5%;">
+          <div class="col-sm-3"></div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-3"></div>
+          <input type="number" placeholder="(Number of people)" class="form-control col-sm-6" id="numberOfPeople" style="margin-bottom: 1.5%;" onchange="nbOfPeopleFunction()">
+          <div class="col-sm-3"></div>
+        </div>
+        <div class="form-group row" id="usernamesInputsFields"></div>
+        <div class="form-group row">
+          <div class="col-sm-5"></div>
+          <button type="submit" class="btn btn-primary col-sm-2">Submit</button>
+          <div class="col-sm-5"></div>
+        </div>
+      </form>
+    </div>
+  </div><br><br>
 
-  
-<div class="container">
-  <h1 class="text-center" style="margin-top: 4%;">New Adventure</h1>
-  <div class="formBox form-group">
-    <form action="/action_page.php">
-      <div class="form-group row">
-        <div class="col-sm-1"></div>
-        <label for="groupName" class="col-sm-2 col-form-label">Group name: </label>
-        <input type="text" class="form-control col-sm-6" id="groupName" style="margin-bottom: 1.5%;">
-        <div class="col-sm-3"></div>
-      </div>
-      <div class="form-group row">
-        <div class="col-sm-1"></div>
-        <label for="numberOfPeople" class="col-sm-2 col-form-label">Number of people: </label>
-        <input type="number" class="form-control col-sm-6" id="numberOfPeople" style="margin-bottom: 1.5%;" onchange="nbOfPeopleFunction()">
-        <div class="col-sm-3"></div>
-      </div>
-      <div class="form-group row" id="usernamesInputsFields">
-        
-      </div>
-      <div class="form-group row">
-        <div class="col-sm-5"></div>
-        <button type="submit" class="btn btn-primary col-sm-2">Submit</button>
-        <div class="col-sm-5"></div>
-      </div>
-    </form>
-  </div>
-</div><br><br>
-
-<footer class="container-fluid text-center">
-  <p>Text</p>
-</footer>
+  <footer class="container-fluid text-center">
+    <p>Text</p>
+  </footer>
 
 </body>
 </html>

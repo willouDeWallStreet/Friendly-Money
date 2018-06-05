@@ -26,7 +26,7 @@ module.exports = function(app, passport) {
     });
 
     // process the signup form
-	app.post('/', passport.authenticate('local-signup', {
+	app.post('/signup', passport.authenticate('local-signup', {
 		successRedirect : '/menu', // redirect to the secure profile section
 		failureRedirect : '/', // redirect back to the signup form if there is an error
 		failureFlash : true // allow flash messages
@@ -44,8 +44,8 @@ module.exports = function(app, passport) {
 	// ADD ==============================
 	// =====================================
 	// show the signup form
-	app.get('/add', function(req, res) {
-		res.render('add.html'); // load the add.html file
+	app.get('/create', function(req, res) {
+		res.render('create.html'); // load the add.html file
 	});
 
 	// =====================================
@@ -54,6 +54,14 @@ module.exports = function(app, passport) {
 	// show money spent
 	app.get('/see', isLoggedIn, function(req, res) {
 		res.render('see.html'); // load the see.html file
+	});
+
+	// =====================================
+	// ACCOUNT =========================
+	// =====================================
+	// show account parameters
+	app.get('/account', isLoggedIn, function(req, res) {
+		res.render('account.html'); // load the account.html file
 	});
 
 	// =====================================

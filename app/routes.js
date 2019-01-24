@@ -1,4 +1,5 @@
 // app/routes.js
+
 module.exports = function(app, passport) {
 
 	// =====================================
@@ -9,21 +10,21 @@ module.exports = function(app, passport) {
     });
     
     // process the login form
-	app.post('/', passport.authenticate('local-login', {
+	app.post('/login', passport.authenticate('local-login', {
         successRedirect : '/menu', // redirect to the secure profile section
         failureRedirect : '/', // redirect back to the signup form if there is an error
         failureFlash : true // allow flash messages
     }),
     function(req, res) {
-        console.log("hello");
+		sess = req.session;
+		sess.username=req.body.usernameSignin;
 
+        console.log("EMAIL --> "+sess.email);
         if (req.body.remember) {
           req.session.cookie.maxAge = 1000 * 60 * 3;
         } else {
           req.session.cookie.expires = false;
-        }
-    res.redirect('/');
-    });
+    }});
 
     // process the signup form
 	app.post('/signup', passport.authenticate('local-signup', {
@@ -37,6 +38,10 @@ module.exports = function(app, passport) {
 	// =====================================
 	// show the menu links
 	app.get('/menu', function(req, res) {
+		sess = req.session;
+		console.log("Username: "+sess.cookie.maxAge);
+		// Cookies that have been signed
+		console.log('Signed Cookies: ', req.signedCookies)
 		res.render('menu.html'); // load the home.html file
 	});
 

@@ -19,6 +19,26 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <!-- LIBRARY ANGULARJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+        var username,pass;
+        $("#submitSignin").click(function(){
+          username=$("#usernameSignin").val();
+          password=$("#passwordSignin").val();
+          console.log(username);
+          /*
+          * Perform some validation here.
+          */
+          $.post("http://localhost:3000/login",{username:username,username:username},function(data){        
+              if(data==='done')           
+              {
+                  window.location.href="/menu";
+              }
+          });
+        });
+      });
+      </script>
   </head>
 <body>
 
@@ -37,10 +57,10 @@
           <a class="nav-link" href="javascript:void(0)">Contact</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0 loginForm" wtx-context="82BECB9C-4318-47D0-94B5-91637FB738C5" action="/" method="post">
-        <input class="form-control mr-sm-2" type="text" placeholder="Usernames" wtx-context="D0715BF9-4F3B-40A1-8B78-C5344A1C9203" id="usernameSignin" name="usernameSignin">
+      <form class="form-inline my-2 my-lg-0 loginForm" wtx-context="82BECB9C-4318-47D0-94B5-91637FB738C5" action="/login" method="post">
+        <input class="form-control mr-sm-2" type="text" placeholder="Username" wtx-context="D0715BF9-4F3B-40A1-8B78-C5344A1C9203" id="usernameSignin" name="usernameSignin">
         <input class="form-control mr-sm-2" type="password" placeholder="Password" wtx-context="D0715BF9-4F3B-40A1-8B78-C5344A1C9203" id="passwordSignin" name="passwordSignin">
-        <button class="btn btn-primary my-2 my-sm-0" type="submit">Sign in</button>
+        <button class="btn btn-primary my-2 my-sm-0" type="submit" id="submitSignin">Sign in</button>
       </form>
     </div>
   </nav>
@@ -78,6 +98,7 @@
 
   <footer class="container-fluid text-center">
     <p><a href="menu">Text</a></p>
+    <p><a href="test666">Test666</a></p>
   </footer>
 
 </body>

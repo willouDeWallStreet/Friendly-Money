@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Menu</title>
+  <!-- CSS perso -->
+  <link rel="stylesheet" type="text/css" href="css/styleHome.css">
+  <link rel="stylesheet" type="text/css" href="css/styleMenu.css">
+  <% include ../partials/head.ejs %>
+</head>
+<body>
+    
+    <% include ../partials/nav.ejs %>
+
+<div>
+    <h1 class="text-center" style="margin-top: 4%;">What do you want to do?</h1>
+</div>
+<div class="buttons form-goup row" style="margin-top: 8%;">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-2" style="float: left;">
+        <a href="create">
+            <button type="button" class="btnspe btnMenu btn">CREATE</button>
+        </a>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-2" style="float: left;">
+        <a href="see">
+            <button type="button" class="btnspe btnMenu btn">SEE</button>
+        </a>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-2" style="float: left;">
+        <a href="delete">
+            <button type="button" class="btnspe btnMenu btn">DELETE</button>
+        </a>
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+
+<% include ../partials/footer.ejs %>
+
+</body>
+</html>

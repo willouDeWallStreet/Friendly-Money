@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <!-- CSS perso -->
+    <link rel="stylesheet" type="text/css" href="css/styleHome.css">
+    <% include ../partials/head.ejs %>
+
+    <script>
+      $(document).ready(function(){
+        var username,pass;
+        $("#submitSignin").click(function(){
+          username=$("#usernameSignin").val();
+          password=$("#passwordSignin").val();
+          console.log(username);
+          /*
+          * Perform some validation here.
+          */
+          $.post("http://localhost:3000/login",{username:username,username:username},function(data){        
+              if(data==='done')           
+              {
+                  window.location.href="/menu";
+              }
+          });
+        });
+      });
+      </script>
+  </head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="home">Logo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navb">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">Contact</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0 loginForm" wtx-context="82BECB9C-4318-47D0-94B5-91637FB738C5" action="/login" method="post">
+        <input class="form-control mr-sm-2" type="text" placeholder="Username" wtx-context="D0715BF9-4F3B-40A1-8B78-C5344A1C9203" id="usernameSignin" name="usernameSignin">
+        <input class="form-control mr-sm-2" type="password" placeholder="Password" wtx-context="D0715BF9-4F3B-40A1-8B78-C5344A1C9203" id="passwordSignin" name="passwordSignin">
+        <button class="btn btn-primary my-2 my-sm-0" type="submit" id="submitSignin">Sign in</button>
+      </form>
+    </div>
+  </nav>
+    
+  <div class="container">    
+    <h1 class="text-center" style="margin-top: 5%;">Friendly Money</h1><br>
+    <div class="row" style="margin-top: 3%;">
+      <div class="col-sm-5" style="text-align: justify;">
+        <h4>Les bons comptes font les bons amis</h4>
+        <p>Friendly Money est un outil permettant aux amis de le rester. Ce site internet spectaculaire vous permet de ....</p>
+      </div>
+      <div class="col-sm-1"></div>
+      <div class="col-sm-6 jumbotron text-center" style="border-radius: 2%;">
+        <a href="signup" class="goSignup">
+          <button type="button" class="btn btn-outline-info center-block">
+            <h3 class="text-center">Sign up</h3>
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="container-fluid text-center">
+    <p><a href="menu">Text</a></p>
+  </footer>
+
+</body>
+</html>

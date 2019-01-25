@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Account</title>
+  <!-- CSS perso -->
+  <link rel="stylesheet" type="text/css" href="css/styleHome.css">
+  <link rel="stylesheet" type="text/css" href="css/styleAccount.css">
+  <!-- JS perso -->
+  <script src="js/scriptAccount.js"></script>
+  <% include ../partials/head.ejs %>
+</head>
+<body>
+    
+    <% include ../partials/nav.ejs %>
+
+    <div class="container">
+        <div>
+            <h1 class="text-center" style="margin-top: 4%;">William EVRARD</h1>
+        </div>
+        <div class="form-goup row" style="margin-top: 8%;">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <form>
+                    <div class="form-goup" style="margin-bottom: 3%;">
+                        <input type="username" class="form-control" id="username" value="willouDeWallStreet">
+                    </div>
+                    <div class="form-goup" style="margin-bottom: 3%;">
+                        <input type="email" class="form-control" id="email" value="example@email.com">
+                    </div>
+                    <div class="form-goup" style="margin-bottom: 3%;">
+                        <input type="password" class="form-control" id="pwd" value="Password">
+                    </div>
+                    <div style="text-align:center;"><button type="submit" class="btn btn-primary" style="width: 40%;">Modify</button></div>
+                </form>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+
+    <% include ../partials/footer.ejs %>
+
+</body>
+</html>

@@ -3,11 +3,10 @@
 module.exports = function(app, passport) {
 
 	// =====================================
-	// HOME PAGE (with login & signUp forms) ========
+	// HOME PAGE (with login & signUp link) ========
 	// =====================================
-	app.get('/', function(req, res) {
-		res.render('home.html'); // load the home.html file
-    });
+	app.get('/', (req, res) => res.render('pages/home'))
+	app.get('/home', (req, res) => res.render('pages/home'))
     
     // process the login form
 	app.post('/login', passport.authenticate('local-login', {
@@ -17,7 +16,7 @@ module.exports = function(app, passport) {
     }),
     function(req, res) {
 		sess = req.session;
-		sess.username=req.body.usernameSignin;
+		sess.username = req.body.usernameSignin;
 
         console.log("EMAIL --> "+sess.email);
         if (req.body.remember) {
@@ -26,48 +25,40 @@ module.exports = function(app, passport) {
           req.session.cookie.expires = false;
     }});
 
-    // process the signup form
-	app.post('/signup', passport.authenticate('local-signup', {
-		successRedirect : '/menu', // redirect to the secure profile section
-		failureRedirect : '/', // redirect back to the signup form if there is an error
-		failureFlash : true // allow flash messages
-	}));
-
 	// =====================================
 	// MENU ===============================
 	// =====================================
 	// show the menu links
 	app.get('/menu', function(req, res) {
 		sess = req.session;
-		console.log("Username: "+sess.cookie.maxAge);
+		console.log("Username: "+ sess.cookie.maxAge);
 		// Cookies that have been signed
 		console.log('Signed Cookies: ', req.signedCookies)
-		res.render('menu.html'); // load the home.html file
+		res.render('pages/menu'); // load the home.html file
 	});
+
+	// =====================================
+	// SIGNUP ==============================
+	// =====================================
+	app.get('/signup', (req, res) => res.render('pages/signup'))
 
 	// =====================================
 	// ADD ==============================
 	// =====================================
-	// show the signup form
-	app.get('/create', function(req, res) {
-		res.render('create.html'); // load the add.html file
-	});
+	// show the create shareMoneyTeam form
+	app.get('/create', (req, res) => res.render('pages/create'))
 
 	// =====================================
 	// SEE =========================
 	// =====================================
 	// show money spent
-	app.get('/see', isLoggedIn, function(req, res) {
-		res.render('see.html'); // load the see.html file
-	});
+	app.get('/see', isLoggedIn, (req, res) => res.render('pages/see'))
 
 	// =====================================
 	// ACCOUNT =========================
 	// =====================================
 	// show account parameters
-	app.get('/account', isLoggedIn, function(req, res) {
-		res.render('account.html'); // load the account.html file
-	});
+	app.get('/account', isLoggedIn, (req, res) => res.render('pages/account'))
 
 	// =====================================
 	// LOGOUT ==============================

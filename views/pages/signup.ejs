@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <% include ../partials/head.ejs %>
+        <!-- CSS perso -->
+        <link rel="stylesheet" type="text/css" href="css/styleHome.css">
+        <link rel="stylesheet" type="text/css" href="css/styleSignup.css">
+        <!-- JS perso -->
+        <script src="js/scriptSignup.js"></script>
+    </head>
+    <body>
+        <div class="bg-secondary signupArea">
+            <div class="signupForm">
+                <form action="/signup" method="post">
+                    <h2 class="text-center signupTitle">Sign up</h2>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="usernameSignup" name="usernameSignup" placeholder="Username" onchange="loadFunction()">
+                        </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="emailSignup" name="emailSignup" placeholder="Email" onchange="loadFunction()">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="pwdSignup" name="pwdSignup" placeholder="Password" onchange="loadFunction()">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="pwd2Signup" name="pwd2Signup" placeholder="Confirm Password" onchange="loadFunction()">
+                    </div>
+                    <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width: 0%; margin-bottom: 2%; border-radius: 2%; color: white;" id="loadBar"></div>
+                    <div style="text-align:center;"><button type="submit" class="btn btn-primary signupSubmitButton">Submit</button></div>
+                </form>
+            </div>
+        </div>
+        <div class="goHomeArea text-center">
+            <a href="home" class="goHomeLink">
+                <button type="button" class="btn btn-outline-dark center-block">Go home</button>
+            </a>
+        </div>
+
+        <% include ../partials/footer.ejs %>
+
+    </body>
+</html>

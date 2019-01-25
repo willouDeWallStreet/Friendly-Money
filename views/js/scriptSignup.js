@@ -1,8 +1,8 @@
 function loadFunction() {
-    var fieldUsername = document.getElementById("username");
-    var fieldEmail = document.getElementById("email");
-    var fieldPwd = document.getElementById("pwd");
-    var fieldPwd2= document.getElementById("pwd2");
+    var fieldUsername = document.getElementById("usernameSignup");
+    var fieldEmail = document.getElementById("emailSignup");
+    var fieldPwd = document.getElementById("pwdSignup");
+    var fieldPwd2= document.getElementById("pwd2Signup");
 
     var loadBar = document.getElementById("loadBar");
 

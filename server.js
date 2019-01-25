@@ -19,10 +19,9 @@ var flash    = require('connect-flash');
 require('./config/passport')(passport); // pass passport for configuration
 
 ////////
-app.use(express.static(__dirname + '/views/'));
-app.set('views', __dirname + '/views');
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
+app.use(express.static(__dirname + '/views/'))
+app.set('views', __dirname + '/views')
+app.set('view engine', 'ejs')
 
 // set up our express application
 app.use(morgan('dev')); // log every request to the console
